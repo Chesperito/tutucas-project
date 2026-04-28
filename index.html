@@ -41,20 +41,72 @@
 
 <div class="item">
   <span>Marmitex 500g - R$25</span>
-  <button onclick="abrirMarmitex(this, 'Marmitex 500g', 25)">+</button>
+   <p>Já acompanha arroz, caso não queira, especifique em observações</p>
+    <button onclick="abrirSabores(this, 'Marmitex 500g', 25)">+</button>
+   <div class="sabores">
+     <p>Escolha o feijão</p>
+     <label class="opcao"><input type="radio" name="FeijaoP" value="Tropeiro"> Tropeiro</label>
+     <label class="opcao"><input type="radio" name="FeijaoP" value="Caldo"> Caldo</label>
+     <label class="opcao"><input type="radio" name="FeijaoP" value="Sem feijão"> Sem feijão</label>
 
-  <div class="marmitex-box">
-    <input type="text" placeholder="Descreva seu marmitex">
+    <p>Escolha a carne</p>
+    <label class="opcao"><input type="radio" name="CarneP" value="Churrasco"> Churrasco</label>
+    <label class="opcao"><input type="radio" name="CarneP" value="Cozida"> Cozida</label>
+    <label class="opcao"><input type="radio" name="CarneP" value="Carne do dia 1]"> Carne do dia 1</label>
+    <label class="opcao"><input type="radio" name="CarneP" value="Carne do dia 2"> Carne do dia 2</label>
+    <label class="opcao"><input type="radio" name="CarneP" value="Sem carne"> Sem carne</label>
+
+     <p>Escolha a opção especial</p>
+    <label class="opcao"><input type="radio" name="EspecialP" value="Especial 1"> Especial 1</label>
+    <label class="opcao"><input type="radio" name="EspecialP" value="Especial 2"> Especial 2</label>
+    <label class="opcao"><input type="radio" name="EspecialP" value="Sem especial"> Sem especial</label>
+    
+    <p>Escolha a salada</p>
+    <label class="opcao"><input type="radio" name="SaladaP" value="Salada 1"> Salada 1</label>
+    <label class="opcao"><input type="radio" name="SaladaP" value="Salada 2"> Salada 2</label>
+    <label class="opcao"><input type="radio" name="SaladaP" value="Sem Salada"> Sem Salada</label>
+
+    <p>Escolha a verdura</p>
+    <label class="opcao"><input type="radio" name="VerduraP" value="Verdura 1"> Verdura 1</label>
+    <label class="opcao"><input type="radio" name="VerduraP" value="Verdura 2"> Verdura 2</label>
+    <label class="opcao"><input type="radio" name="VerduraP" value="Sem Verdura"> Sem Verdura</label>
+
     <button onclick="confirmarMarmitex(this)">Confirmar</button>
   </div>
 </div>
 
 <div class="item">
   <span>Marmitex 700g - R$28</span>
-  <button onclick="abrirMarmitex(this, 'Marmitex 700g', 28)">+</button>
+  <p>Já acompanha arroz, caso não queira, especifique em observações</p>
+  <button onclick="abrirSabores(this, 'Marmitex 700g', 28)">+</button>
+   <div class="sabores">
+     <p>Escolha o feijão</p>
+     <label class="opcao"><input type="radio" name="FeijaoG" value="Tropeiro"> Tropeiro</label>
+     <label class="opcao"><input type="radio" name="FeijaoG" value="Caldo"> Caldo</label>
+     <label class="opcao"><input type="radio" name="FeijaoG" value="Sem feijão"> Sem feijão</label>
 
-  <div class="marmitex-box">
-    <input type="text" placeholder="Descreva seu marmitex">
+    <p>Escolha a carne</p>
+    <label class="opcao"><input type="radio" name="CarneG" value="Churrasco"> Churrasco</label>
+    <label class="opcao"><input type="radio" name="CarneG" value="Cozida"> Cozida</label>
+    <label class="opcao"><input type="radio" name="CarneG" value="Carne do dia 1]"> Carne do dia 1</label>
+    <label class="opcao"><input type="radio" name="CarneG" value="Carne do dia 2"> Carne do dia 2</label>
+    <label class="opcao"><input type="radio" name="CarneG" value="Sem carne"> Sem carne</label>
+
+     <p>Escolha a opção especial</p>
+    <label class="opcao"><input type="radio" name="EspecialG" value="Especial 1"> Especial 1</label>
+    <label class="opcao"><input type="radio" name="EspecialG" value="Especial 2"> Especial 2</label>
+    <label class="opcao"><input type="radio" name="EspecialG" value="Sem especial"> Sem especial</label>
+    
+    <p>Escolha a salada</p>
+    <label class="opcao"><input type="radio" name="SaladaG" value="Salada 1"> Salada 1</label>
+    <label class="opcao"><input type="radio" name="SaladaG" value="Salada 2"> Salada 2</label>
+    <label class="opcao"><input type="radio" name="SaladaG" value="Sem Salada"> Sem Salada</label>
+
+    <p>Escolha a verdura</p>
+    <label class="opcao"><input type="radio" name="VerduraG" value="Verdura 1"> Verdura 1</label>
+    <label class="opcao"><input type="radio" name="VerduraG" value="Verdura 2"> Verdura 2</label>
+    <label class="opcao"><input type="radio" name="VerduraG" value="Sem Verdura"> Sem Verdura</label>
+
     <button onclick="confirmarMarmitex(this)">Confirmar</button>
   </div>
 </div>
@@ -67,17 +119,17 @@
   <button onclick="abrirSabores(this, 'Pizza Grande', 70)">+</button>
 
   <div class="sabores">
-    <label><input type="checkbox" value="Calabresa"> Calabresa</label>
-    <label><input type="checkbox" value="Frango"> Frango</label>
-    <label><input type="checkbox" value="Portuguesa"> Portuguesa</label>
-    <label><input type="checkbox" value="Lombinho"> Lombinho canadense</label>
-    <label><input type="checkbox" value="Carne Seca"> Carne Seca</label>
-    <label><input type="checkbox" value="Atum"> Atum</label>
-    <label><input type="checkbox" value="Milho"> Milho</label>
-    <label><input type="checkbox" value="Bacon"> Bacon</label>
-    <label><input type="checkbox" value="Mussarela"> Mussarela</label>
-    <label><input type="checkbox" value="Banana"> Banana</label>
-    <label><input type="checkbox" value="Tropical"> Tropical</label>
+    <label><input type="checkbox" value="CalabresaG"> Calabresa</label>
+    <label><input type="checkbox" value="FrangoG"> Frango</label>
+    <label><input type="checkbox" value="PortuguesaG"> Portuguesa</label>
+    <label><input type="checkbox" value="LombinhoG"> Lombinho canadense</label>
+    <label><input type="checkbox" value="Carne SecaG"> Carne Seca</label>
+    <label><input type="checkbox" value="AtumG"> Atum</label>
+    <label><input type="checkbox" value="MilhoG"> Milho</label>
+    <label><input type="checkbox" value="BaconG"> Bacon</label>
+    <label><input type="checkbox" value="MussarelaG"> Mussarela</label>
+    <label><input type="checkbox" value="BananaG"> Banana</label>
+    <label><input type="checkbox" value="TropicalG"> Tropical</label>
      
     <div class="metade-box" style="display:none;">
      <p>Qual sabor será metade da pizza?</p>
@@ -92,17 +144,17 @@
   <button onclick="abrirSabores(this, 'Pizza Média', 63)">+</button>
 
   <div class="sabores">
-    <label><input type="checkbox" value="Calabresa"> Calabresa</label>
-    <label><input type="checkbox" value="Frango"> Frango</label>
-    <label><input type="checkbox" value="Portuguesa"> Portuguesa</label>
-    <label><input type="checkbox" value="Lombinho"> Lombinho canadense</label>
-    <label><input type="checkbox" value="Carne Seca"> Carne Seca</label>
-    <label><input type="checkbox" value="Atum"> Atum</label>
-    <label><input type="checkbox" value="Milho"> Milho</label>
-    <label><input type="checkbox" value="Bacon"> Bacon</label>
-    <label><input type="checkbox" value="Mussarela"> Mussarela</label>
-    <label><input type="checkbox" value="Banana"> Banana</label>
-    <label><input type="checkbox" value="Tropical"> Tropical</label>
+    <label><input type="checkbox" value="CalabresaM"> Calabresa</label>
+    <label><input type="checkbox" value="FrangoM"> Frango</label>
+    <label><input type="checkbox" value="PortuguesaM"> Portuguesa</label>
+    <label><input type="checkbox" value="LombinhoM"> Lombinho canadense</label>
+    <label><input type="checkbox" value="Carne SecaM"> Carne Seca</label>
+    <label><input type="checkbox" value="AtumM"> Atum</label>
+    <label><input type="checkbox" value="MilhoM"> Milho</label>
+    <label><input type="checkbox" value="BaconM"> Bacon</label>
+    <label><input type="checkbox" value="MussarelaM"> Mussarela</label>
+    <label><input type="checkbox" value="BananaM"> Banana</label>
+    <label><input type="checkbox" value="TropicalM"> Tropical</label>
     <div class="metade-box" style="display:none;">
      <p>Qual sabor será metade da pizza?</p>
    <select class="metade-select"></select>
@@ -116,17 +168,17 @@
   <button onclick="abrirSabores(this, 'Pizza Pequena', 55)">+</button>
 
   <div class="sabores">
-    <label><input type="checkbox" value="Calabresa"> Calabresa</label>
-    <label><input type="checkbox" value="Frango"> Frango</label>
-    <label><input type="checkbox" value="Portuguesa"> Portuguesa</label>
-    <label><input type="checkbox" value="Lombinho"> Lombinho canadense</label>
-    <label><input type="checkbox" value="Carne Seca"> Carne Seca</label>
-    <label><input type="checkbox" value="Atum"> Atum</label>
-    <label><input type="checkbox" value="Milho"> Milho</label>
-    <label><input type="checkbox" value="Bacon"> Bacon</label>
-    <label><input type="checkbox" value="Mussarela"> Mussarela</label>
-    <label><input type="checkbox" value="Banana"> Banana</label>
-    <label><input type="checkbox" value="Tropical"> Tropical</label>
+    <label><input type="checkbox" value="CalabresaP"> Calabresa</label>
+    <label><input type="checkbox" value="FrangoP"> Frango</label>
+    <label><input type="checkbox" value="PortuguesaP"> Portuguesa</label>
+    <label><input type="checkbox" value="LombinhoP"> Lombinho canadense</label>
+    <label><input type="checkbox" value="Carne SecaP"> Carne Seca</label>
+    <label><input type="checkbox" value="AtumP"> Atum</label>
+    <label><input type="checkbox" value="MilhoP"> Milho</label>
+    <label><input type="checkbox" value="BaconP"> Bacon</label>
+    <label><input type="checkbox" value="MussarelaP"> Mussarela</label>
+    <label><input type="checkbox" value="BananaP"> Banana</label>
+    <label><input type="checkbox" value="TropicalP"> Tropical</label>
     <div class="metade-box" style="display:none;">
     <p>Qual sabor será metade da pizza?</p>
     <select class="metade-select"></select>
