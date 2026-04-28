@@ -49,21 +49,28 @@ function confirmarMarmitex(botao) {
   let item = box.parentElement;
 
   let btn = item.querySelector("button:not(.confirmar)");
-  let input = box.querySelector("input");
 
-  let descricao = input.value;
-
-  if (!descricao || descricao.trim() === "") {
-    alert("Descreva seu marmitex");
-    return;
+  function pegar(prefixo, padrao) {
+    let el = box.querySelector(`input[name^="${prefixo}"]:checked`);
+    return el ? el.value : padrao;
   }
+
+  let feijao = pegar("Feijao", "Sem feijão");
+  let carne = pegar("Carne", "Sem carne");
+  let especial = pegar("Especial", "Sem especial");
+  let salada = pegar("Salada", "Sem salada");
+  let verdura = pegar("Verdura", "Sem verdura");
+
+  let descricao = `Feijão: ${feijao}, Carne: ${carne}, Especial: ${especial}, Salada: ${salada}, Verdura: ${verdura}`;
 
   let nome = btn.dataset.nome;
   let preco = Number(btn.dataset.preco);
 
   addItem(`${nome} (${descricao})`, preco);
 
-  input.value = "";
+  // resetar radios
+  box.querySelectorAll("input[type='radio']").forEach(i => i.checked = false);
+
   box.style.display = "none";
 }
 
