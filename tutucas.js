@@ -335,13 +335,17 @@ function finalizar()
   mensagem += `Troco para: R$ ${troco}\n`;
 }
 
-// verifica se tem pizza ou porção nas entregas de almoço
-let temItemRestrito = carrinho.some(item => {
-  let nomeItem = item.nome.toLowerCase();
-  return nomeItem.includes("pizza") || 
-         nomeItem.includes("fritas") || 
-         nomeItem.includes("macaxeira") || 
-         nomeItem.includes("chapa");
+// verifica se tem pizza ou porção nas entregas de almoço e marmitex na entrega de noite
+let temItemRestritoManha = carrinho.some(item => {
+  let nomeItem1 = item.nome.toLowerCase();
+  return nomeItem1.includes("pizza") || 
+         nomeItem1.includes("fritas") || 
+         nomeItem1.includes("macaxeira") || 
+         nomeItem1.includes("chapa");
+});
+let temItemRestritoNoite = carrinho.some(item => {
+  let nomeItem2 = item.nome.toLowerCase();
+  return nomeItem2.includes("marmitex");
 });
 
  const dataBR = new Date(
@@ -352,10 +356,16 @@ let temItemRestrito = carrinho.some(item => {
  const minutos = dataBR.getMinutes();
  const horaAtual = hora + minutos / 60;
 
-if (temItemRestrito && (horaAtual < 18 || horaAtual > 22)) {
+if (temItemRestritoManha && (horaAtual < 18 || horaAtual > 22)) {
   alert("A entrega de Pizzas e Porções só é possível entre 18:00–22:00");
   return;
 } 
+
+if (temItemRestritoNoite && (horaAtual < 10.5 || horaAtual > 13.5)) {
+  alert("A entrega de Marmitex só é possível entre 10:30–13:30");
+  return;
+}
+
  
 mensagem += `\n`;
 
