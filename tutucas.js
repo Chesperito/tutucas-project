@@ -25,8 +25,7 @@ function abrirSabores(botao, nome, preco) {
 // ABRIR MARMITEX
 
 function abrirMarmitex(botao, nome, preco) {
-  let item = botao.parentElement;
-  let box = item.querySelector(".marmitex-box");
+  let box = botao.nextElementSibling;
 
   let aberto = window.getComputedStyle(box).display === "block";
 
@@ -47,8 +46,19 @@ function abrirMarmitex(botao, nome, preco) {
 function confirmarMarmitex(botao) {
   let box = botao.parentElement;
   let item = box.parentElement;
+  
+  let obrigatorios = ["Feijao", "Carne", "Especial", "Salada", "Verdura"];
 
-  let btn = item.querySelector("button:not(.confirmar)");
+  for (let nomeItemNaoMarcado of obrigatorios) {
+    let marcado = box.querySelector(`input[name^="${nomeItemNaoMarcado}"]:checked`);
+    
+    if (!marcado) {
+      alert(`Escolha uma opção de ${nomeItemNaoMarcado.toLowerCase()}`);
+      return;
+    }
+  }
+
+  let btn = box.previousElementSibling;
 
   function pegar(prefixo, padrao) {
     let el = box.querySelector(`input[name^="${prefixo}"]:checked`);
