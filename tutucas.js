@@ -167,6 +167,18 @@ function addItem(nome, preco) {
   carrinho.push({ nome, preco });
   total += preco;
   atualizar();
+  mostrarCarrinho();
+}
+// MOSTRAR CARRINHO
+function mostrarCarrinho() {
+  const carrinho = document.querySelector(".carrinho");
+
+  carrinho.style.display = "block";
+
+  // reinicia animação
+  carrinho.style.animation = "none";
+  carrinho.offsetHeight;
+  carrinho.style.animation = "subir 0.3s ease";
 }
 
 // ATUALIZAR CARRINHO
@@ -181,6 +193,11 @@ function atualizar() {
   });
 
   document.getElementById("total").innerText = total.toFixed(2);
+  const carrinhoBox = document.querySelector(".carrinho");
+
+  if (carrinho.length === 0) {
+    carrinhoBox.style.display = "none"; 
+  }
 }
 
 // PAGAMENTO
