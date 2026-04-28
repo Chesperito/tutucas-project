@@ -1,0 +1,659 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutuca's Restaurante e Pizzaria</title>
+  <p id="status"></p>
+  <link rel="stylesheet" href="tutucas.css">
+</head>
+
+<body>
+
+<header class="banner">
+  <div class="overlay">
+    <img src="img/logo.png" class="logo" alt="Logo Tutucas">
+    <h1>Tutuca's Restaurante e Pizzaria</h1>
+    <h2>Desde 1974</h2>
+  </div>
+</header>
+
+<section class="menu">
+<h2>Informações Gerais</h2>
+<div class="item">
+  <p>Endereço: Avenida Pedro Abrantes, 137 - Centro</p>
+
+  <p>Horário de Funcionamento Segunda a Sábado das 10:30 ás 13:30 e 18:00 ás 22:00, Domingo 18:00 ás 22:00 .</p>
+
+</div>
+    <div class="item">
+     <div id="info-geral"></div>
+    </div>
+<h2>Marmitex</h2> 
+<div class="item"> 
+  <div class="info"> 
+    <span class="titulo">Cardápio do dia</span>
+     <div class="descricao">
+       <h2 id="data"></h2>
+         <ul id="cardapio"></ul> 
+      </div> 
+    </div>
+   </div>
+
+<div class="item">
+  <span>Marmitex 500g - R$25</span>
+  <button onclick="abrirMarmitex(this, 'Marmitex 500g', 25)">+</button>
+
+  <div class="marmitex-box">
+    <input type="text" placeholder="Descreva seu marmitex">
+    <button onclick="confirmarMarmitex(this)">Confirmar</button>
+  </div>
+</div>
+
+<div class="item">
+  <span>Marmitex 700g - R$28</span>
+  <button onclick="abrirMarmitex(this, 'Marmitex 700g', 28)">+</button>
+
+  <div class="marmitex-box">
+    <input type="text" placeholder="Descreva seu marmitex">
+    <button onclick="confirmarMarmitex(this)">Confirmar</button>
+  </div>
+</div>
+
+<h2>Pizzas</h2>
+<p>Escolha até 4 sabores</p>
+
+<div class="item">
+  <span>Grande - R$70</span>
+  <button onclick="abrirSabores(this, 'Pizza Grande', 70)">+</button>
+
+  <div class="sabores">
+    <label><input type="checkbox" value="Calabresa"> Calabresa</label>
+    <label><input type="checkbox" value="Frango"> Frango</label>
+    <label><input type="checkbox" value="Portuguesa"> Portuguesa</label>
+    <label><input type="checkbox" value="Lombinho"> Lombinho canadense</label>
+    <label><input type="checkbox" value="Carne Seca"> Carne Seca</label>
+    <label><input type="checkbox" value="Atum"> Atum</label>
+    <label><input type="checkbox" value="Milho"> Milho</label>
+    <label><input type="checkbox" value="Bacon"> Bacon</label>
+    <label><input type="checkbox" value="Mussarela"> Mussarela</label>
+    <label><input type="checkbox" value="Banana"> Banana</label>
+    <label><input type="checkbox" value="Tropical"> Tropical</label>
+     
+    <div class="metade-box" style="display:none;">
+     <p>Qual sabor será metade da pizza?</p>
+     <select class="metade-select"></select>
+    </div>
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div>
+</div>
+
+<div class="item">
+  <span>Média - R$63</span>
+  <button onclick="abrirSabores(this, 'Pizza Média', 63)">+</button>
+
+  <div class="sabores">
+    <label><input type="checkbox" value="Calabresa"> Calabresa</label>
+    <label><input type="checkbox" value="Frango"> Frango</label>
+    <label><input type="checkbox" value="Portuguesa"> Portuguesa</label>
+    <label><input type="checkbox" value="Lombinho"> Lombinho canadense</label>
+    <label><input type="checkbox" value="Carne Seca"> Carne Seca</label>
+    <label><input type="checkbox" value="Atum"> Atum</label>
+    <label><input type="checkbox" value="Milho"> Milho</label>
+    <label><input type="checkbox" value="Bacon"> Bacon</label>
+    <label><input type="checkbox" value="Mussarela"> Mussarela</label>
+    <label><input type="checkbox" value="Banana"> Banana</label>
+    <label><input type="checkbox" value="Tropical"> Tropical</label>
+    <div class="metade-box" style="display:none;">
+     <p>Qual sabor será metade da pizza?</p>
+   <select class="metade-select"></select>
+   </div>
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div>
+</div>
+
+<div class="item">
+  <span>Pequena - R$55</span>
+  <button onclick="abrirSabores(this, 'Pizza Pequena', 55)">+</button>
+
+  <div class="sabores">
+    <label><input type="checkbox" value="Calabresa"> Calabresa</label>
+    <label><input type="checkbox" value="Frango"> Frango</label>
+    <label><input type="checkbox" value="Portuguesa"> Portuguesa</label>
+    <label><input type="checkbox" value="Lombinho"> Lombinho canadense</label>
+    <label><input type="checkbox" value="Carne Seca"> Carne Seca</label>
+    <label><input type="checkbox" value="Atum"> Atum</label>
+    <label><input type="checkbox" value="Milho"> Milho</label>
+    <label><input type="checkbox" value="Bacon"> Bacon</label>
+    <label><input type="checkbox" value="Mussarela"> Mussarela</label>
+    <label><input type="checkbox" value="Banana"> Banana</label>
+    <label><input type="checkbox" value="Tropical"> Tropical</label>
+    <div class="metade-box" style="display:none;">
+    <p>Qual sabor será metade da pizza?</p>
+    <select class="metade-select"></select>
+</div>
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div>
+</div>
+
+<h2>Porções</h2>
+
+<div class="item">
+  <span>Macaxeira Grande- R$70</span>
+  <button onclick="addItem('Macaxeira Grande',70)">+</button>
+</div>
+<div class="item">
+  <span>Macaxeira Média- R$60</span>
+  <button onclick="addItem('Macaxeira Média',60)">+</button>
+</div> 
+<div class="item">
+  <span>Macaxeira Grande Especial - R$75</span>
+  <p>Acompanha adicional de queijo</p>
+  <button onclick="addItem('Macaxeira Grande Especial',75)">+</button>
+</div>
+<div class="item">
+  <span>Macaxeira Média Especial - R$65</span>
+  <p>Acompanha adicional de queijo</p>
+  <button onclick="addItem('Macaxeira Média Especial',65)">+</button>
+</div>
+
+
+<div class="item">
+  <span>Fritas com Carne Grande - R$65</span>
+  <button onclick="abrirSabores(this, 'Fritas Grande', 65)">+</button>
+   <div class="sabores">
+    <label class="opcao"><input type="radio" name="Fritas Grande" value="Carne de Porco"> Carne de Porco</label>
+    <label class="opcao"><input type="radio" name="Fritas Grande" value="Carne de Boi"> Carne de Boi</label>
+    <label class="opcao"><input type="radio" name="Fritas Grande" value="Filé de frango"> Filé de frango</label>
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div> 
+  </div> 
+
+  <div class="item">
+  <span>Fritas com Carne Média - R$60</span>
+  <button onclick="abrirSabores(this, 'Fritas Média', 60)">+</button>
+   <div class="sabores">
+    <label class="opcao"><input type="radio" name="Fritas Média" value="Carne de Boi"> Carne de Boi</label>
+    <label class="opcao"><input type="radio" name="Fritas Média" value="Filé de frango"> Filé de frango</label>
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div> 
+   </div>
+
+<div class="item">
+  <span>Fritas com Carne de Porco Média - R$50</span>
+  <button onclick="addItem('Fritas com Carne de Porco Média',50)">+</button>
+</div>
+
+<div class="item">
+  <span>Chapa Mineira Média - R$80</span>
+  <p>Acompanha Linguiça Mineira, Filé de frango, Carne de Boi, Carne de Porco, Torradas, cebola e pimentão</p>
+  <button onclick="addItem('Chapa Mineira Média',80)">+</button>
+</div>
+
+<div class="item">
+  <span>Chapa Mineira Grande - R$100</span>
+  <p>Acompanha Linguiça Mineira, Filé de frango, Carne de Boi, Carne de Porco, Torradas, cebola e pimentão</p>
+  <button onclick="addItem('Chapa Mineira Grande',100)">+</button>
+</div>
+
+<h2>Bebidas</h2>
+
+<div class="item">
+  <span>Refrigerante lata - R$5,50</span>
+  <button onclick="abrirSabores(this, 'Refrigerante Lata', 5.50)">+</button>
+   <div class="sabores">
+    <label class="opcao"><input type="radio" name="Refrigerante Lata" value="Coca-Cola"> Coca-Cola</label>
+    <label class="opcao"><input type="radio" name="Refrigerante Lata" value="Guaraná"> Guaraná</label>
+    <label class="opcao"><input type="radio" name="Refrigerante Lata" value="Fanta Uva"> Fanta Uva</label>
+    <label class="opcao"><input type="radio" name="Refrigerante Lata" value="Fanta Laranja"> Fanta Laranja</label>
+
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div>
+</div>
+<div class="item">
+  <span>Refrigerante 600ml - R$8</span>
+  <button onclick="abrirSabores(this, 'Refrigerante 600ml', 8)">+</button>
+  <div class="sabores">
+    <label class="opcao"><input type="radio" name="Refrigerante 600ml" value="Coca-Cola"> Coca-Cola</label>
+    <label class="opcao"><input type="radio" name="Refrigerante 600ml" value="Guaraná"> Guaraná</label>
+    <label class="opcao"><input type="radio" name="Refrigerante 600ml" value="Fanta Uva"> Fanta Uva</label>
+    <label class="opcao"><input type="radio" name="Refrigerante 600ml" value="Fanta Laranja"> Fanta Laranja</label>
+
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div>
+</div>
+<div class="item">
+  <span>Refrigerante 1L - R$10</span>
+  <button onclick="abrirSabores(this, 'Refrigerante 1L', 10)">+</button>
+  <div class="sabores">
+    <label class="opcao"><input type="radio" name="Refrigerante 1L" value="Coca-Cola"> Coca-Cola</label>
+    <label class="opcao"><input type="radio" name="Refrigerante 1L" value="Guaraná"> Guaraná</label>
+    <label class="opcao"><input type="radio" name="Refrigerante 1L" value="Fanta Uva"> Fanta Uva</label>
+    <label class="opcao"><input type="radio" name="Refrigerante 1L" value="Fanta Laranja"> Fanta Laranja</label>
+
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div>
+</div>
+<div class="item">
+  <span>Refrigerante 2L - R$15</span>
+  <button onclick="abrirSabores(this, 'Refrigerante 2L', 15)">+</button>
+     <div class="sabores">
+    <label class="opcao"><input type="radio" name="Refrigerante 2L" value="Coca-Cola"> Coca-Cola</label>
+    <label class="opcao"><input type="radio" name="Refrigerante 2L" value="Guaraná"> Guaraná</label>
+    <label class="opcao"><input type="radio" name="Refrigerante 2L" value="Fanta Uva"> Fanta Uva</label>
+    <label class="opcao"><input type="radio" name="Refrigerante 2L" value="Fanta Laranja"> Fanta Laranja</label>
+
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div>
+</div>
+
+<div class="item">
+  <span>Suco 500ml - R$10</span>
+  <button onclick="abrirSabores(this, 'Suco 500ml', 10)">+</button>
+   <div class="sabores">
+    <label class="opcao"><input type="radio" name="suco500ml" value="Laranja"> Laranja</label>
+    <label class="opcao"><input type="radio" name="suco500ml" value="Abacaxi"> Abacaxi</label>
+    <label class="opcao"><input type="radio" name="suco500ml" value="Maracujá"> Maracujá</label>
+    <label class="opcao"><input type="radio" name="suco500ml" value="Acerola"> Acerola</label>
+
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div>
+</div>
+<div class="item">
+  <span>Suco 700ml - R$12</span>
+  <button onclick="abrirSabores(this, 'Suco 700ml', 12)">+</button>
+   <div class="sabores">
+    <label class="opcao"><input type="radio" name="suco700ml" value="Laranja"> Laranja</label>
+    <label class="opcao"><input type="radio" name="suco700ml" value="Abacaxi"> Abacaxi</label>
+    <label class="opcao"><input type="radio" name="suco700ml" value="Maracujá"> Maracujá</label>
+    <label class="opcao"><input type="radio" name="suco700ml" value="Acerola"> Acerola</label>
+
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div>
+</div>
+<div class="item">
+  <span>Suco 1L - R$15</span>
+  <button onclick="abrirSabores(this, 'Suco 1L', 15)">+</button>
+   <div class="sabores">
+    <label class="opcao"><input type="radio" name="suco1l" value="Laranja"> Laranja</label>
+   <label class="opcao"><input type="radio" name="suco1l" value="Abacaxi"> Abacaxi</label>
+    <label class="opcao"><input type="radio" name="suco1l" value="Maracujá"> Maracujá</label>
+    <label class="opcao"><input type="radio" name="suco1l" value="Acerola"> Acerola</label>
+
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div>
+</div>
+
+</section>
+
+<section class="carrinho">
+  <h2>Pedido</h2>
+  <ul id="lista"></ul>
+  <p>Total: R$ <span id="total">0</span></p>
+
+  <input id="nome" placeholder="Seu nome">
+  <input id="endereco" placeholder="Endereço">
+  
+  <div class="pagamento">
+    <h3>Método de pagamento</h3>
+
+<label class="opcao">
+  <input type="radio" name="pagamento" value="Pix" onchange="verificarPagamento()">
+  <span>Pix</span>
+</label>
+
+<label class="opcao">
+  <input type="radio" name="pagamento" value="Cartão" onchange="verificarPagamento()">
+  <span>Cartão</span>
+</label>
+
+<label class="opcao">
+  <input type="radio" name="pagamento" value="Dinheiro" onchange="verificarPagamento()">
+  <span>Dinheiro</span>
+</label>
+
+  </div>
+
+  <div id="trocoBox" style="display:none;">
+    <input type="text" id="troco" placeholder="Troco para quanto?">
+  </div>
+
+  <br><br>
+  <input id="OBS" placeholder="Observações (opcional)">
+  <button onclick="finalizar()">Enviar no WhatsApp</button>
+</section>
+
+<script src="tutucas.js"></script>
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutuca's Restaurante e Pizzaria</title>
+  <p id="status"></p>
+  <link rel="stylesheet" href="tutucas.css">
+</head>
+
+<body>
+
+<header class="banner">
+  <div class="overlay">
+    <img src="img/logo.png" class="logo" alt="Logo Tutucas">
+    <h1>Tutuca's Restaurante e Pizzaria</h1>
+    <h2>Desde 1973</h2>
+  </div>
+</header>
+
+<section class="menu">
+<h2>Informações Gerais</h2>
+<div class="item">
+  <p>Endereço: Avenida Pedro Abrantes, 137 - Centro</p>
+
+  <p>Horário de Funcionamento Segunda a Sábado das 10:30 ás 13:30 e 18:00 ás 22:00, Domingo 18:00 ás 22:00 .</p>
+
+</div>
+    <div class="item">
+     <div id="info-geral"></div>
+    </div>
+<h2>Marmitex</h2> 
+<div class="item"> 
+  <div class="info"> 
+    <span class="titulo">Cardápio do dia</span>
+     <div class="descricao">
+       <h2 id="data"></h2>
+         <ul id="cardapio"></ul> 
+      </div> 
+    </div>
+   </div>
+
+<div class="item">
+  <span>Marmitex 500g - R$25</span>
+  <button onclick="abrirMarmitex(this, 'Marmitex 500g', 25)">+</button>
+
+  <div class="marmitex-box">
+    <input type="text" placeholder="Descreva seu marmitex">
+    <button onclick="confirmarMarmitex(this)">Confirmar</button>
+  </div>
+</div>
+
+<div class="item">
+  <span>Marmitex 700g - R$28</span>
+  <button onclick="abrirMarmitex(this, 'Marmitex 700g', 28)">+</button>
+
+  <div class="marmitex-box">
+    <input type="text" placeholder="Descreva seu marmitex">
+    <button onclick="confirmarMarmitex(this)">Confirmar</button>
+  </div>
+</div>
+
+<h2>Pizzas</h2>
+<p>Escolha até 4 sabores</p>
+
+<div class="item">
+  <span>Grande - R$70</span>
+  <button onclick="abrirSabores(this, 'Pizza Grande', 70)">+</button>
+
+  <div class="sabores">
+    <label><input type="checkbox" value="Calabresa"> Calabresa</label>
+    <label><input type="checkbox" value="Frango"> Frango</label>
+    <label><input type="checkbox" value="Portuguesa"> Portuguesa</label>
+    <label><input type="checkbox" value="Lombinho"> Lombinho canadense</label>
+    <label><input type="checkbox" value="Carne Seca"> Carne Seca</label>
+    <label><input type="checkbox" value="Atum"> Atum</label>
+    <label><input type="checkbox" value="Milho"> Milho</label>
+    <label><input type="checkbox" value="Bacon"> Bacon</label>
+    <label><input type="checkbox" value="Mussarela"> Mussarela</label>
+    <label><input type="checkbox" value="Banana"> Banana</label>
+    <label><input type="checkbox" value="Tropical"> Tropical</label>
+     
+    <div class="metade-box" style="display:none;">
+     <p>Qual sabor será metade da pizza?</p>
+     <select class="metade-select"></select>
+    </div>
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div>
+</div>
+
+<div class="item">
+  <span>Média - R$63</span>
+  <button onclick="abrirSabores(this, 'Pizza Média', 63)">+</button>
+
+  <div class="sabores">
+    <label><input type="checkbox" value="Calabresa"> Calabresa</label>
+    <label><input type="checkbox" value="Frango"> Frango</label>
+    <label><input type="checkbox" value="Portuguesa"> Portuguesa</label>
+    <label><input type="checkbox" value="Lombinho"> Lombinho canadense</label>
+    <label><input type="checkbox" value="Carne Seca"> Carne Seca</label>
+    <label><input type="checkbox" value="Atum"> Atum</label>
+    <label><input type="checkbox" value="Milho"> Milho</label>
+    <label><input type="checkbox" value="Bacon"> Bacon</label>
+    <label><input type="checkbox" value="Mussarela"> Mussarela</label>
+    <label><input type="checkbox" value="Banana"> Banana</label>
+    <label><input type="checkbox" value="Tropical"> Tropical</label>
+    <div class="metade-box" style="display:none;">
+     <p>Qual sabor será metade da pizza?</p>
+   <select class="metade-select"></select>
+   </div>
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div>
+</div>
+
+<div class="item">
+  <span>Pequena - R$55</span>
+  <button onclick="abrirSabores(this, 'Pizza Pequena', 55)">+</button>
+
+  <div class="sabores">
+    <label><input type="checkbox" value="Calabresa"> Calabresa</label>
+    <label><input type="checkbox" value="Frango"> Frango</label>
+    <label><input type="checkbox" value="Portuguesa"> Portuguesa</label>
+    <label><input type="checkbox" value="Lombinho"> Lombinho canadense</label>
+    <label><input type="checkbox" value="Carne Seca"> Carne Seca</label>
+    <label><input type="checkbox" value="Atum"> Atum</label>
+    <label><input type="checkbox" value="Milho"> Milho</label>
+    <label><input type="checkbox" value="Bacon"> Bacon</label>
+    <label><input type="checkbox" value="Mussarela"> Mussarela</label>
+    <label><input type="checkbox" value="Banana"> Banana</label>
+    <label><input type="checkbox" value="Tropical"> Tropical</label>
+    <div class="metade-box" style="display:none;">
+    <p>Qual sabor será metade da pizza?</p>
+    <select class="metade-select"></select>
+</div>
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div>
+</div>
+
+<h2>Porções</h2>
+
+<div class="item">
+  <span>Macaxeira Grande- R$70</span>
+  <button onclick="addItem('Macaxeira Grande',70)">+</button>
+</div>
+<div class="item">
+  <span>Macaxeira Média- R$60</span>
+  <button onclick="addItem('Macaxeira Média',60)">+</button>
+</div> 
+<div class="item">
+  <span>Macaxeira Grande Especial - R$75</span>
+  <p>Acompanha adicional de queijo</p>
+  <button onclick="addItem('Macaxeira Grande Especial',75)">+</button>
+</div>
+<div class="item">
+  <span>Macaxeira Média Especial - R$65</span>
+  <p>Acompanha adicional de queijo</p>
+  <button onclick="addItem('Macaxeira Média Especial',65)">+</button>
+</div>
+
+
+<div class="item">
+  <span>Fritas com Carne Grande - R$65</span>
+  <button onclick="abrirSabores(this, 'Fritas Grande', 65)">+</button>
+   <div class="sabores">
+    <label class="opcao"><input type="radio" name="Fritas Grande" value="Carne de Porco"> Carne de Porco</label>
+    <label class="opcao"><input type="radio" name="Fritas Grande" value="Carne de Boi"> Carne de Boi</label>
+    <label class="opcao"><input type="radio" name="Fritas Grande" value="Filé de frango"> Filé de frango</label>
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div> 
+  </div> 
+
+  <div class="item">
+  <span>Fritas com Carne Média - R$60</span>
+  <button onclick="abrirSabores(this, 'Fritas Média', 60)">+</button>
+   <div class="sabores">
+    <label class="opcao"><input type="radio" name="Fritas Média" value="Carne de Boi"> Carne de Boi</label>
+    <label class="opcao"><input type="radio" name="Fritas Média" value="Filé de frango"> Filé de frango</label>
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div> 
+   </div>
+
+<div class="item">
+  <span>Fritas com Carne de Porco Média - R$50</span>
+  <button onclick="addItem('Fritas com Carne de Porco Média',50)">+</button>
+</div>
+
+<div class="item">
+  <span>Chapa Mineira Média - R$80</span>
+  <p>Acompanha Linguiça Mineira, Filé de frango, Carne de Boi, Carne de Porco, Torradas, cebola e pimentão</p>
+  <button onclick="addItem('Chapa Mineira Média',80)">+</button>
+</div>
+
+<div class="item">
+  <span>Chapa Mineira Grande - R$100</span>
+  <p>Acompanha Linguiça Mineira, Filé de frango, Carne de Boi, Carne de Porco, Torradas, cebola e pimentão</p>
+  <button onclick="addItem('Chapa Mineira Grande',100)">+</button>
+</div>
+
+<h2>Bebidas</h2>
+
+<div class="item">
+  <span>Refrigerante lata - R$5,50</span>
+  <button onclick="abrirSabores(this, 'Refrigerante Lata', 5.50)">+</button>
+   <div class="sabores">
+    <label class="opcao"><input type="radio" name="Refrigerante Lata" value="Coca-Cola"> Coca-Cola</label>
+    <label class="opcao"><input type="radio" name="Refrigerante Lata" value="Guaraná"> Guaraná</label>
+    <label class="opcao"><input type="radio" name="Refrigerante Lata" value="Fanta Uva"> Fanta Uva</label>
+    <label class="opcao"><input type="radio" name="Refrigerante Lata" value="Fanta Laranja"> Fanta Laranja</label>
+
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div>
+</div>
+<div class="item">
+  <span>Refrigerante 600ml - R$8</span>
+  <button onclick="abrirSabores(this, 'Refrigerante 600ml', 8)">+</button>
+  <div class="sabores">
+    <label class="opcao"><input type="radio" name="Refrigerante 600ml" value="Coca-Cola"> Coca-Cola</label>
+    <label class="opcao"><input type="radio" name="Refrigerante 600ml" value="Guaraná"> Guaraná</label>
+    <label class="opcao"><input type="radio" name="Refrigerante 600ml" value="Fanta Uva"> Fanta Uva</label>
+    <label class="opcao"><input type="radio" name="Refrigerante 600ml" value="Fanta Laranja"> Fanta Laranja</label>
+
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div>
+</div>
+<div class="item">
+  <span>Refrigerante 1L - R$10</span>
+  <button onclick="abrirSabores(this, 'Refrigerante 1L', 10)">+</button>
+  <div class="sabores">
+    <label class="opcao"><input type="radio" name="Refrigerante 1L" value="Coca-Cola"> Coca-Cola</label>
+    <label class="opcao"><input type="radio" name="Refrigerante 1L" value="Guaraná"> Guaraná</label>
+    <label class="opcao"><input type="radio" name="Refrigerante 1L" value="Fanta Uva"> Fanta Uva</label>
+    <label class="opcao"><input type="radio" name="Refrigerante 1L" value="Fanta Laranja"> Fanta Laranja</label>
+
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div>
+</div>
+<div class="item">
+  <span>Refrigerante 2L - R$15</span>
+  <button onclick="abrirSabores(this, 'Refrigerante 2L', 15)">+</button>
+     <div class="sabores">
+    <label class="opcao"><input type="radio" name="Refrigerante 2L" value="Coca-Cola"> Coca-Cola</label>
+    <label class="opcao"><input type="radio" name="Refrigerante 2L" value="Guaraná"> Guaraná</label>
+    <label class="opcao"><input type="radio" name="Refrigerante 2L" value="Fanta Uva"> Fanta Uva</label>
+    <label class="opcao"><input type="radio" name="Refrigerante 2L" value="Fanta Laranja"> Fanta Laranja</label>
+
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div>
+</div>
+
+<div class="item">
+  <span>Suco 500ml - R$10</span>
+  <button onclick="abrirSabores(this, 'Suco 500ml', 10)">+</button>
+   <div class="sabores">
+    <label class="opcao"><input type="radio" name="suco500ml" value="Laranja"> Laranja</label>
+    <label class="opcao"><input type="radio" name="suco500ml" value="Abacaxi"> Abacaxi</label>
+    <label class="opcao"><input type="radio" name="suco500ml" value="Maracujá"> Maracujá</label>
+    <label class="opcao"><input type="radio" name="suco500ml" value="Acerola"> Acerola</label>
+
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div>
+</div>
+<div class="item">
+  <span>Suco 700ml - R$12</span>
+  <button onclick="abrirSabores(this, 'Suco 700ml', 12)">+</button>
+   <div class="sabores">
+    <label class="opcao"><input type="radio" name="suco700ml" value="Laranja"> Laranja</label>
+    <label class="opcao"><input type="radio" name="suco700ml" value="Abacaxi"> Abacaxi</label>
+    <label class="opcao"><input type="radio" name="suco700ml" value="Maracujá"> Maracujá</label>
+    <label class="opcao"><input type="radio" name="suco700ml" value="Acerola"> Acerola</label>
+
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div>
+</div>
+<div class="item">
+  <span>Suco 1L - R$15</span>
+  <button onclick="abrirSabores(this, 'Suco 1L', 15)">+</button>
+   <div class="sabores">
+    <label class="opcao"><input type="radio" name="suco1l" value="Laranja"> Laranja</label>
+   <label class="opcao"><input type="radio" name="suco1l" value="Abacaxi"> Abacaxi</label>
+    <label class="opcao"><input type="radio" name="suco1l" value="Maracujá"> Maracujá</label>
+    <label class="opcao"><input type="radio" name="suco1l" value="Acerola"> Acerola</label>
+
+    <button onclick="confirmarItem(this)">Confirmar</button>
+  </div>
+</div>
+
+</section>
+
+<section class="carrinho">
+  <h2>Pedido</h2>
+  <ul id="lista"></ul>
+  <p>Total: R$ <span id="total">0</span></p>
+
+  <input id="nome" placeholder="Seu nome">
+  <input id="endereco" placeholder="Endereço">
+  
+  <div class="pagamento">
+    <h3>Método de pagamento</h3>
+
+<label class="opcao">
+  <input type="radio" name="pagamento" value="Pix" onchange="verificarPagamento()">
+  <span>Pix</span>
+</label>
+
+<label class="opcao">
+  <input type="radio" name="pagamento" value="Cartão" onchange="verificarPagamento()">
+  <span>Cartão</span>
+</label>
+
+<label class="opcao">
+  <input type="radio" name="pagamento" value="Dinheiro" onchange="verificarPagamento()">
+  <span>Dinheiro</span>
+</label>
+
+  </div>
+
+  <div id="trocoBox" style="display:none;">
+    <input type="text" id="troco" placeholder="Troco para quanto?">
+  </div>
+
+  <br><br>
+  <input id="OBS" placeholder="Observações (opcional)">
+  <button onclick="finalizar()">Enviar no WhatsApp</button>
+</section>
+
+<script src="tutucas.js"></script>
+</body>
+</html>
+>>>>>>> 5373601ec71eea3936d5958a911e0c158994b357
