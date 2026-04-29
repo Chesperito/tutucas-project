@@ -283,39 +283,49 @@ function carregarInfo() {
   fetch(url)
     .then(res => res.text())
     .then(texto => {
+
+      texto = texto.replace(/\r/g, "");
+
       const linhas = texto.trim().split("\n");
       const box = document.getElementById("info-geral");
 
       box.innerHTML = "";
 
-      if (linhas.length === 0) return;
+      if (linhas.length < 2) {
+        box.innerText = "Sem dados";
+        return;
+      }
 
-      // 🔥 DETECTA SEPARADOR
+      // 🔥 detecta separador corretamente
       const separador = linhas[0].includes(";") ? ";" : ",";
 
       const tabela = document.createElement("table");
 
-      // CABEÇALHO
+      // ===== CABEÇALHO =====
       const cabecalho = linhas[0].split(separador);
       const trHead = document.createElement("tr");
 
-      cabecalho.forEach(coluna => {
+      cabecalho.forEach(col => {
         const th = document.createElement("th");
-        th.textContent = coluna.trim();
+        th.textContent = col.replace(/"/g, "").trim();
         trHead.appendChild(th);
       });
 
       tabela.appendChild(trHead);
 
-      // DADOS
+      // ===== DADOS =====
       for (let i = 1; i < linhas.length; i++) {
-        const valores = linhas[i].split(separador);
+        if (!linhas[i]) continue;
 
+        const valores = linhas[i].split(separador);
         const tr = document.createElement("tr");
 
         valores.forEach(valor => {
           const td = document.createElement("td");
-          td.textContent = valor.trim();
+
+          // 🔥 remove aspas
+          td.textContent = valor.replace(/"/g, "").trim();
+
           tr.appendChild(td);
         });
 
@@ -323,6 +333,9 @@ function carregarInfo() {
       }
 
       box.appendChild(tabela);
+    })
+    .catch(err => {
+      console.error("Erro ao carregar CSV:", err);
     });
 }
 // FINALIZAR PEDIDO
