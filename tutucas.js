@@ -430,55 +430,73 @@ window.onload = function() {
   atualizarStatus();
   carregarInfo(); 
   setInterval(atualizarStatus, 60000);
+  function carregarCardapio() {
   const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQurYk5MovMx8djBr0QS8XMFRcZQQpdNvQFt8Db2zXV2aWZ4AshRkmn5QCFyxBf5ksX22qCWAcaa4vI/pub?output=csv";
 
-fetch(url)
-  .then(res => res.text())
-  .then(texto => {
-    texto = texto.replace(/\r/g, ""); // limpa quebra bugada
+  fetch(url)
+    .then(res => res.text())
+    .then(texto => {
 
-    const linhas = texto.trim().split("\n");
-    if (linhas.length < 2) return;
+      texto = texto.replace(/\r/g, "");
 
-    const box = document.getElementById("cardapio");
-    box.innerHTML = "";
+      const linhas = texto.trim().split("\n");
+      if (linhas.length < 2) return;
 
-    // 🔥 detecta separador
-    const separador = linhas[0].includes(";") ? ";" : ",";
+      const box = document.getElementById("cardapio");
+      box.innerHTML = "";
 
-    // ===== CABEÇALHO =====
-    const cabecalho = linhas[0].split(separador);
+     
+      const separador = linhas[0].includes(";") ? ";" : ",";
 
-    const tabela = document.createElement("table");
+      const primeiraLinha = linhas[1].split(separador);
+      const data = primeiraLinha[0];
 
-    const trHead = document.createElement("tr");
-    cabecalho.forEach(col => {
-      const th = document.createElement("th");
-      th.textContent = col.trim();
-      trHead.appendChild(th);
-    });
-    tabela.appendChild(trHead);
+      const titulo = document.createElement("h2");
+      titulo.textContent = `Cardápio do dia: ${data}`;
+      titulo.classList.add("titulo-cardapio");
 
-    // ===== DADOS =====
-    for (let i = 1; i < linhas.length; i++) {
-      if (!linhas[i]) continue;
+      box.appendChild(titulo);
 
-      const valores = linhas[i].split(separador);
 
-      const tr = document.createElement("tr");
+      const tabela = document.createElement("table");
 
-      valores.forEach(valor => {
-        const td = document.createElement("td");
-        td.textContent = valor.trim();
-        tr.appendChild(td);
+  
+      const cabecalho = linhas[0].split(separador);
+      cabecalho.shift(); // remove coluna da data
+
+      const trHead = document.createElement("tr");
+
+      cabecalho.forEach(col => {
+        const th = document.createElement("th");
+        th.textContent = col.trim();
+        trHead.appendChild(th);
       });
 
-      tabela.appendChild(tr);
-    }
+      tabela.appendChild(trHead);
 
-    box.appendChild(tabela);
-  })
-  .catch(err => {
-    console.error("Erro:", err);
-  });
+  
+      for (let i = 1; i < linhas.length; i++) {
+        if (!linhas[i]) continue;
+
+        const valores = linhas[i].split(separador);
+
+        valores.shift(); // remove data
+
+        const tr = document.createElement("tr");
+
+        valores.forEach(valor => {
+          const td = document.createElement("td");
+          td.textContent = valor.trim();
+          tr.appendChild(td);
+        });
+
+        tabela.appendChild(tr);
+      }
+
+      box.appendChild(tabela);
+    })
+    .catch(err => {
+      console.error("Erro:", err);
+    });
+}
 };

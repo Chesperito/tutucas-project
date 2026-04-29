@@ -48,7 +48,29 @@ header {
   margin-right: 300px;
   padding-bottom: 300px; 
 }
+.titulo-cardapio {
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: bold;
+}
 
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+th, td {
+  padding: 12px;
+}
+
+th {
+  background: #f4f4f4;
+}
+
+td {
+  background: #fff;
+}
 
 .item {
   background: white;
