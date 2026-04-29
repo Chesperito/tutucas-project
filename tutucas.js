@@ -280,24 +280,44 @@ function atualizarStatus() {
 function carregarInfo() {
   const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR3hlKTf4goN5NuZ3iG1RTCt0Pilq-fy8crZtgkyaAqR27vofOWfzvaZCJTH8SOt9Zxb4Fm058P9EHN/pub?output=csv";
 
-  fetch(url)
+ fetch(url)
     .then(res => res.text())
     .then(texto => {
       const linhas = texto.trim().split("\n");
-
       const box = document.getElementById("info-geral");
 
       box.innerHTML = "";
 
-      linhas.forEach(linha => {
-        linha = linha.trim();
+      const tabela = document.createElement("table");
 
-        if (linha) {
-          const p = document.createElement("p");
-          p.textContent = linha;
-          box.appendChild(p);
-        }
+      // CABEÇALHO
+      const cabecalho = linhas[0].split(",");
+      const trHead = document.createElement("tr");
+
+      cabecalho.forEach(coluna => {
+        const th = document.createElement("th");
+        th.textContent = coluna;
+        trHead.appendChild(th);
       });
+
+      tabela.appendChild(trHead);
+
+      // DADOS
+      for (let i = 1; i < linhas.length; i++) {
+        const valores = linhas[i].split(",");
+
+        const tr = document.createElement("tr");
+
+        valores.forEach(valor => {
+          const td = document.createElement("td");
+          td.textContent = valor;
+          tr.appendChild(td);
+        });
+
+        tabela.appendChild(tr);
+      }
+
+      box.appendChild(tabela);
     });
 }
 // FINALIZAR PEDIDO
