@@ -280,7 +280,7 @@ function atualizarStatus() {
 function carregarInfo() {
   const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR3hlKTf4goN5NuZ3iG1RTCt0Pilq-fy8crZtgkyaAqR27vofOWfzvaZCJTH8SOt9Zxb4Fm058P9EHN/pub?output=csv";
 
- fetch(url)
+  fetch(url)
     .then(res => res.text())
     .then(texto => {
       const linhas = texto.trim().split("\n");
@@ -288,15 +288,20 @@ function carregarInfo() {
 
       box.innerHTML = "";
 
+      if (linhas.length === 0) return;
+
+      // 🔥 DETECTA SEPARADOR
+      const separador = linhas[0].includes(";") ? ";" : ",";
+
       const tabela = document.createElement("table");
 
       // CABEÇALHO
-      const cabecalho = linhas[0].split(",");
+      const cabecalho = linhas[0].split(separador);
       const trHead = document.createElement("tr");
 
       cabecalho.forEach(coluna => {
         const th = document.createElement("th");
-        th.textContent = coluna;
+        th.textContent = coluna.trim();
         trHead.appendChild(th);
       });
 
@@ -304,13 +309,13 @@ function carregarInfo() {
 
       // DADOS
       for (let i = 1; i < linhas.length; i++) {
-        const valores = linhas[i].split(",");
+        const valores = linhas[i].split(separador);
 
         const tr = document.createElement("tr");
 
         valores.forEach(valor => {
           const td = document.createElement("td");
-          td.textContent = valor;
+          td.textContent = valor.trim();
           tr.appendChild(td);
         });
 
