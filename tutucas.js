@@ -435,7 +435,7 @@ window.onload = function() {
 fetch(url)
   .then(res => res.text())
   .then(texto => {
-    texto = texto.replace(/\r/g, ""); 
+    texto = texto.replace(/\r/g, ""); // limpa quebra bugada
 
     const linhas = texto.trim().split("\n");
     if (linhas.length < 2) return;
@@ -443,8 +443,10 @@ fetch(url)
     const box = document.getElementById("cardapio");
     box.innerHTML = "";
 
+    // 🔥 detecta separador
     const separador = linhas[0].includes(";") ? ";" : ",";
 
+    // ===== CABEÇALHO =====
     const cabecalho = linhas[0].split(separador);
 
     const tabela = document.createElement("table");
@@ -479,3 +481,4 @@ fetch(url)
   .catch(err => {
     console.error("Erro:", err);
   });
+};
