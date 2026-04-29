@@ -171,7 +171,7 @@ function addItem(nome, preco) {
 }
 // MOSTRAR CARRINHO
 function mostrarCarrinho() {
-  const carrinho = document.querySelector(".carrinho");
+  const carrinhoBox = document.querySelector(".carrinho");
 
   carrinho.style.display = "block";
 
@@ -424,13 +424,7 @@ function limitarSabores() {
     });
   });
 }
-
-window.onload = function() {
-  limitarSabores();
-  atualizarStatus();
-  carregarInfo(); 
-  setInterval(atualizarStatus, 60000);
-  function carregarCardapio() {
+function carregarCardapio() {
   const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQurYk5MovMx8djBr0QS8XMFRcZQQpdNvQFt8Db2zXV2aWZ4AshRkmn5QCFyxBf5ksX22qCWAcaa4vI/pub?output=csv";
 
   fetch(url)
@@ -480,7 +474,7 @@ window.onload = function() {
 
         const valores = linhas[i].split(separador);
 
-        valores.shift(); // remove data
+        valores.shift(); 
 
         const tr = document.createElement("tr");
 
@@ -498,5 +492,11 @@ window.onload = function() {
     .catch(err => {
       console.error("Erro:", err);
     });
-}
+};
+window.onload = function() {
+  limitarSabores();
+  atualizarStatus();
+  carregarInfo(); 
+  carregarCardapio(); 
+  setInterval(atualizarStatus, 60000);
 };
