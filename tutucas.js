@@ -283,59 +283,21 @@ function carregarInfo() {
   fetch(url)
     .then(res => res.text())
     .then(texto => {
-
-      texto = texto.replace(/\r/g, "");
-
       const linhas = texto.trim().split("\n");
+
       const box = document.getElementById("info-geral");
 
       box.innerHTML = "";
 
-      if (linhas.length < 2) {
-        box.innerText = "Sem dados";
-        return;
-      }
+      linhas.forEach(linha => {
+        linha = linha.trim();
 
-      // 🔥 detecta separador corretamente
-      const separador = linhas[0].includes(";") ? ";" : ",";
-
-      const tabela = document.createElement("table");
-
-      // ===== CABEÇALHO =====
-      const cabecalho = linhas[0].split(separador);
-      const trHead = document.createElement("tr");
-
-      cabecalho.forEach(col => {
-        const th = document.createElement("th");
-        th.textContent = col.replace(/"/g, "").trim();
-        trHead.appendChild(th);
+        if (linha) {
+          const p = document.createElement("p");
+          p.textContent = linha;
+          box.appendChild(p);
+        }
       });
-
-      tabela.appendChild(trHead);
-
-      // ===== DADOS =====
-      for (let i = 1; i < linhas.length; i++) {
-        if (!linhas[i]) continue;
-
-        const valores = linhas[i].split(separador);
-        const tr = document.createElement("tr");
-
-        valores.forEach(valor => {
-          const td = document.createElement("td");
-
-          // 🔥 remove aspas
-          td.textContent = valor.replace(/"/g, "").trim();
-
-          tr.appendChild(td);
-        });
-
-        tabela.appendChild(tr);
-      }
-
-      box.appendChild(tabela);
-    })
-    .catch(err => {
-      console.error("Erro ao carregar CSV:", err);
     });
 }
 // FINALIZAR PEDIDO
@@ -470,39 +432,50 @@ window.onload = function() {
   setInterval(atualizarStatus, 60000);
   const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQurYk5MovMx8djBr0QS8XMFRcZQQpdNvQFt8Db2zXV2aWZ4AshRkmn5QCFyxBf5ksX22qCWAcaa4vI/pub?output=csv";
 
-  fetch(url)
-    .then(res => res.text())
-    .then(texto => {
-      const linhas = texto.trim().split("\n");
+fetch(url)
+  .then(res => res.text())
+  .then(texto => {
+    texto = texto.replace(/\r/g, ""); 
 
-      if (linhas.length < 2) return;
+    const linhas = texto.trim().split("\n");
+    if (linhas.length < 2) return;
 
-      const linha = linhas[1];
+    const box = document.getElementById("cardapio");
+    box.innerHTML = "";
 
+    const separador = linhas[0].includes(";") ? ";" : ",";
 
-      const separador = linha.includes(";") ? ";" : ",";
+    const cabecalho = linhas[0].split(separador);
 
-     const dados = linha.split(separador);
+    const tabela = document.createElement("table");
 
-      const dataEl = document.getElementById("data");
-      const lista = document.getElementById("cardapio");
-
-      if (!dataEl || !lista) return;
-
-      dataEl.innerText = dados[0];
-
-      lista.innerHTML = "";
-
-      dados.slice(1).forEach(prato => {
-        prato = prato.trim();
-        if (prato) {
-          const li = document.createElement("li");
-          li.textContent = prato;
-          lista.appendChild(li);
-        }
-      });
-    })
-    .catch(err => {
-      console.error("Erro:", err);
+    const trHead = document.createElement("tr");
+    cabecalho.forEach(col => {
+      const th = document.createElement("th");
+      th.textContent = col.trim();
+      trHead.appendChild(th);
     });
-};
+    tabela.appendChild(trHead);
+
+    // ===== DADOS =====
+    for (let i = 1; i < linhas.length; i++) {
+      if (!linhas[i]) continue;
+
+      const valores = linhas[i].split(separador);
+
+      const tr = document.createElement("tr");
+
+      valores.forEach(valor => {
+        const td = document.createElement("td");
+        td.textContent = valor.trim();
+        tr.appendChild(td);
+      });
+
+      tabela.appendChild(tr);
+    }
+
+    box.appendChild(tabela);
+  })
+  .catch(err => {
+    console.error("Erro:", err);
+  });
