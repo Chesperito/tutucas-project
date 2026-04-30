@@ -8,6 +8,7 @@ body {
   background: #f4f4f4;
 }
 
+/* HEADER */
 header {
   background: #7a0000;
   color: white;
@@ -43,41 +44,36 @@ header {
   margin-bottom: 10px;
 }
 
-
+/* MENU */
 .menu {
   padding: 20px;
   padding-bottom: 120px;
-  margin-right: 320px; 
+  margin-right: 320px; /* espaço pro carrinho no desktop */
 }
 
+/* CARDÁPIO */
+.titulo-cardapio {
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: bold;
+}
 
-@media (max-width: 900px) {
- .menu {
-    margin-right: 0;
-    padding: 10px;
-    width: 100%;
-  }
+.tabela-container {
+  width: 100%;
+  overflow-x: auto;
+}
 
-  .tabela-container {
-    width: 100%;
-    overflow-x: auto;
-  }
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  table-layout: fixed;
+}
 
-  table {
-    width: 100%;
-    min-width: 100%; /* 👈 ocupa só o espaço disponível */
-    font-size: 12px;
-  }
-
-  th, td {
-    padding: 6px;
-    word-break: break-word; /* quebra texto grande */
-  }
-
-  .titulo-cardapio {
-    font-size: 16px;
-    text-align: center;
-  }
+th, td {
+  padding: 12px;
+  word-break: break-word;
+}
 
 th {
   background: #f4f4f4;
@@ -88,7 +84,7 @@ td {
   border-radius: 8px;
 }
 
-
+/* ITENS */
 .item {
   background: white;
   padding: 15px;
@@ -104,7 +100,7 @@ td {
   font-weight: bold;
 }
 
-
+/* BOTÕES */
 button {
   background: green;
   color: white;
@@ -118,7 +114,7 @@ button:hover {
   background: darkgreen;
 }
 
-
+/* BOXES */
 .marmitex-box,
 .sabores {
   display: none;
@@ -144,7 +140,7 @@ button:hover {
   width: 100%;
 }
 
-
+/* CARRINHO DESKTOP */
 .carrinho {
   position: fixed;
   top: 0;
@@ -158,14 +154,43 @@ button:hover {
   box-shadow: -2px 0 10px rgba(0,0,0,0.1);
 }
 
+/* INPUTS */
+input {
+  width: 100%;
+  margin: 5px 0;
+  padding: 8px;
+}
 
+/* PAGAMENTO */
+.pagamento {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.opcao {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.opcao input {
+  margin: 0;
+  width: auto;
+}
+
+/* ========================= */
+/* 📱 MOBILE (corrigido) */
+/* ========================= */
 @media (max-width: 900px) {
 
   .menu {
     margin-right: 0;
     padding: 10px;
+    width: 100%;
   }
-  
+
   .tabela-container {
     width: 100%;
     overflow-x: auto;
@@ -173,13 +198,13 @@ button:hover {
 
   table {
     width: 100%;
-    min-width: 500px; 
-    font-size: 12px; 
+    min-width: 100%; /* não deixa vazar */
+    font-size: 12px;
   }
 
   th, td {
-    padding: 6px; 
-    white-space: nowrap; 
+    padding: 6px;
+    word-break: break-word;
   }
 
   .titulo-cardapio {
@@ -187,6 +212,7 @@ button:hover {
     text-align: center;
   }
 
+  /* carrinho vira barra inferior */
   .carrinho {
     display: block;
     position: fixed;
@@ -205,30 +231,4 @@ button:hover {
   .carrinho.ativo {
     transform: translateY(0);
   }
-}
-
-
-input {
-  width: 100%;
-  margin: 5px 0;
-  padding: 8px;
-}
-
-
-.pagamento {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.opcao {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-}
-
-.opcao input {
-  margin: 0;
-  width: auto;
 }
