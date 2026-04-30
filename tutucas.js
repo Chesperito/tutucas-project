@@ -487,7 +487,10 @@ function carregarCardapio() {
         tabela.appendChild(tr);
       }
 
-      box.appendChild(tabela);
+      const wrapper = document.createElement("div");
+      wrapper.classList.add("tabela-container");
+      wrapper.appendChild(tabela);
+      box.appendChild(wrapper);
     })
     .catch(err => {
       console.error("Erro:", err);
