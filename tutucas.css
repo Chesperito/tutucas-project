@@ -53,8 +53,10 @@ header {
 
 @media (max-width: 900px) {
   .menu {
-    margin-right: 0;
-    padding-bottom: 300px;
+     margin-right: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }
 
