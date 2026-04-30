@@ -52,39 +52,32 @@ header {
 
 
 @media (max-width: 900px) {
-  .menu {
-     margin-right: 0;
+ .menu {
+    margin-right: 0;
+    padding: 10px;
     width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
   }
-}
 
-.titulo-cardapio {
-  margin-bottom: 15px;
-  font-size: 22px;
-  font-weight: bold;
-}
+  .tabela-container {
+    width: 100%;
+    overflow-x: auto;
+  }
 
+  table {
+    width: 100%;
+    min-width: 100%; /* 👈 ocupa só o espaço disponível */
+    font-size: 12px;
+  }
 
-.tabela-container {
-  width: 100%;
-  overflow-x: auto;
-}
+  th, td {
+    padding: 6px;
+    word-break: break-word; /* quebra texto grande */
+  }
 
-
-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 10px;
-  table-layout: fixed;
-  min-width: 500px; /* evita esmagar no mobile */
-}
-
-th, td {
-  padding: 12px;
-  word-break: break-word;
-}
+  .titulo-cardapio {
+    font-size: 16px;
+    text-align: center;
+  }
 
 th {
   background: #f4f4f4;
