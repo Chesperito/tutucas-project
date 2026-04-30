@@ -55,9 +55,9 @@ header {
 }
 
 table {
-  width: 100%;
+  width: 70%;
   border-collapse: separate;
-  border-spacing: 0 10px;
+  border-spacing: 0 7px;
 }
 
 th, td {
